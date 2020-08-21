@@ -7,36 +7,20 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    providerId: {
+      type: String,
+      unique: true,
+      required: true
+    },
     username: {
-      type: String,
-      unique: true,
-      required: true
-    },
-    email: {
-      type: String,
-      lowercase: true,
-      unique: true,
-      required: true
-    },
+      type: String,                 
+    },    
     displayName: {
       type: String,
-    },
-    firstName: {
-      type: String,
-    },
+    },    
     avatar: {
       type: String,
-    },
-    // Google specific
-    googleId: {
-      type: String,
-      unique: true,
-    },
-    // GitHub specific
-    gitHubId: {
-      type: String,
-      unique: true,
-    }
+    }    
   },
   { timestamps: true },
 );
