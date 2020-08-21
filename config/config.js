@@ -6,5 +6,8 @@ module.exports = {
   },
   express: {
     port: process.env.PORT || 3001
+  },
+  cookie: {
+    key: process.env.SECRET_KEY,
   }
 };
