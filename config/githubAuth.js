@@ -35,8 +35,7 @@ passport.use(
             providerId: profile.id,
             username: profile.username,            
             displayName: profile.displayName,
-            avatar: profile.photos[0].value,
-            isDeveloper: true
+            avatar: profile.photos[0].value            
           }).save();
           done(null, user);
         }
