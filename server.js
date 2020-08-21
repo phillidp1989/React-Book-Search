@@ -1,7 +1,17 @@
 const express = require('express');
+const passport = require('passport');
+const logger = require('morgan');
+const cookieSession = require('cookie-session');
+const cors = require('cors');
 
-const connectDB = require('./config/db');
+const authRoutes = require('./routes/authRoutes');
 const config = require('./config/config');
+const connectDB = require('./config/db');
+
+// OAuth passport strategies
+require('./config/githubAuth');
+require('./config/googleAuth');
+require('./config/facebookAuth');
 
 //To use .env file on localserver
 require('dotenv').config();
@@ -9,9 +19,30 @@ require('dotenv').config();
 // Initialize express into app variable
 const app = express();
 
+// Initialize Morgan logger
+app.use(logger("dev"));
+
+// Cookie Session setup for persistent authentication
+app.use(cookieSession({
+  maxAge: 24 * 60 * 60 * 1000,
+  keys: [config.cookie.key],
+}));
+
 // Middleware
-app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Initialize passport and sessions
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(cors({
+  origin: 'http://localhost:3000',
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true
+}))
+
+// Routes
+app.use('/', authRoutes);
 
 // Connect to database
 connectDB();
