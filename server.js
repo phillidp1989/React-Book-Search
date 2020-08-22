@@ -32,6 +32,12 @@ app.use(cookieSession({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Serve up static assets
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
+
 // Initialize passport and sessions
 app.use(passport.initialize());
 app.use(passport.session());
