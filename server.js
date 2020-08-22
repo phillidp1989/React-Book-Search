@@ -5,6 +5,8 @@ const cookieSession = require('cookie-session');
 const cors = require('cors');
 
 const authRoutes = require('./routes/authRoutes');
+const searchRoutes = require('./routes/searchRoute');
+const apiRoutes = require('./routes/apiRoutes');
 const config = require('./config/config');
 const connectDB = require('./config/db');
 
@@ -49,6 +51,8 @@ app.use(cors({
 
 // Routes
 app.use('/', authRoutes);
+app.use('/api', apiRoutes);
+app.use('/', searchRoutes);
 
 // Connect to database
 connectDB();

@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const passport = require("passport");
-const { authCheck, guestCheck } = require("../middleware/auth");
 
 router.get(
   "/auth/github",
