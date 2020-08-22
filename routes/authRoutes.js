@@ -23,8 +23,7 @@ router.get(
 router.get(
   "/auth/google/redirect",
   passport.authenticate("google", { failureRedirect: "/" }),
-  (req, res) => {
-    console.log("authRoutes, redirect route " + req.user.username);
+  (req, res) => {    
     res.redirect("http://localhost:3000/");
   }
 );
@@ -37,8 +36,7 @@ router.get(
 router.get(
   "/auth/facebook/redirect",
   passport.authenticate("facebook", { failureRedirect: "/" }),
-  (req, res) => {
-    console.log("authRoutes, redirect route " + req.user.username);
+  (req, res) => {    
     res.redirect("http://localhost:3000/");
   }
 );
