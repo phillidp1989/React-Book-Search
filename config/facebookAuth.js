@@ -36,7 +36,7 @@ passport.use(
             providerId: profile.id,
             username: profile.displayName + profile.id,            
             displayName: profile.displayName,
-            avatar: profile.profileUrl,            
+            avatar: `https://graph.facebook.com/${profile.id}/picture?type=large`            
           }).save();
           done(null, user);
         }
