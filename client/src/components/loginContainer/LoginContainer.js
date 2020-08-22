@@ -1,7 +1,11 @@
-import React from "react";
+import React, {useContext} from "react";
 import './style.css'
+import { UserContext } from '../../Context/UserState';
 
 function LoginContainer({ children }) {
+  
+  const { user, setUser } = useContext(UserContext)
+
   return (
     <div>
       <div className="container login-container">
