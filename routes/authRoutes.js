@@ -10,7 +10,7 @@ router.get(
   "/auth/github/redirect",
   passport.authenticate("github", { failureRedirect: "/" }),
   (req, res) => {
-    res.redirect("http://localhost:3000/");
+    res.redirect("http://localhost:3000/search");
   }
 );
 
@@ -23,7 +23,7 @@ router.get(
   "/auth/google/redirect",
   passport.authenticate("google", { failureRedirect: "/" }),
   (req, res) => {    
-    res.redirect("http://localhost:3000/");
+    res.redirect("http://localhost:3000/search");
   }
 );
 
@@ -36,13 +36,13 @@ router.get(
   "/auth/facebook/redirect",
   passport.authenticate("facebook", { failureRedirect: "/" }),
   (req, res) => {    
-    res.redirect("http://localhost:3000/");
+    res.redirect("http://localhost:3000/search");
   }
 );
 
 router.get("/logout", (req, res) => {
   req.logout();
-  res.redirect("http://localhost:3000/");
+  res.redirect("http://localhost:3000/login");
 });
 
 router.get("/api/user", (req, res) => {
