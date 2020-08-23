@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const getBooks = require('../utils/API');
+const { authCheck } = require("../middleware/auth");
 
-router.get('/books', async (req, res) => {
+router.post('/books', async (req, res) => {
   try {
     const results = await getBooks(req.body)
     res.status(200).json(results)
