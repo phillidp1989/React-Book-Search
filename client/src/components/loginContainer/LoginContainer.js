@@ -1,11 +1,8 @@
-import React, {useContext} from "react";
+import React from "react";
 import './style.css'
-import { UserContext } from '../../Context/UserState';
 
 function LoginContainer({ children }) {
   
-  const { user, setUser } = useContext(UserContext)
-
   return (
     <div>
       <div className="container login-container">
@@ -19,7 +16,7 @@ function LoginContainer({ children }) {
               <p className="lead">The home of all your favourite books</p>
             </div>
             <div className="divider"></div>
-            <div className="section">{children}</div>
+            <div className="section">{children}</div>            
           </div>
         </div>
       </div>

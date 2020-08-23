@@ -13,7 +13,7 @@ const getUser = async () => {
     setUser(result.data.user);
     setIsLoaded(true);    
   } catch (err) {
-    console.error("ERROR - facebook.js - getUser", err);
+    console.error("ERROR - UserState.js - getUser", err);
   }  
 }
 
@@ -25,7 +25,7 @@ useEffect(() => {
     <div>      
       <UserContext.Provider value={{user, setUser, isLoaded, setIsLoaded}}>
         {children}
-        {user ? <img src={user.avatar} alt={user.displayName}/> : <h2>Not logged in</h2>}  
+        {/* {user ? <img src={user.avatar} alt={user.displayName}/> : <h2>Not logged in</h2>}   */}
       </UserContext.Provider>
     </div>
   )

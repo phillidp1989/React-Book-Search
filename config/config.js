@@ -8,6 +8,9 @@ module.exports = {
     port: process.env.PORT || 3001
   },
   cookie: {
-    key: process.env.SECRET_KEY,
+    key: process.env.SECRET_KEY
+  },
+  api: {
+    key: process.env.API_KEY
   }
 };
