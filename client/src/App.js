@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import Login from "./pages/Login";
 import Search from "./pages/Search";
 import Saved from "./pages/Saved";
@@ -11,12 +11,18 @@ function App() {
   return (
     <div>
       <Router>
-        <Switch />
-        <Route path="/" to="/login" />
+        <Route path="/">
+          <Redirect to="/login" />
+        </Route>
+        <Route path="/search">
+          <Redirect to="/search" />
+        </Route>
+        <Route path="/savedbooks">
+          <Redirect to="/savedbooks" />
+        </Route>   
         <LoginPrivate path="/login" component={Login} />
         <PrivateRoute path="/search" component={Search} />
         <PrivateRoute path="/savedbooks" component={Saved} />
-        <Switch />
       </Router>
     </div>
   );
