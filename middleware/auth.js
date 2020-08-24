@@ -5,13 +5,13 @@ module.exports = {
       console.log('auth check' + req.user);
       return next();
     }
-    res.redirect('http://localhost:3000/login');
+    res.redirect('/login');
   },
   // Check if user is not authenticated
   guestCheck: (req, res, next) => {
     if (!req.user) {
       return next();
     }
-    res.redirect('http://localhost:3000/search');
+    res.redirect('/search');
   },
 };

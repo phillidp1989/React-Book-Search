@@ -6,7 +6,7 @@ export default {
     try {
       return await axios.request({
         method: "POST",
-        url: "http://localhost:3001/books",
+        url: "/books",
         data: query
       });      
     } catch (err) {
@@ -17,7 +17,7 @@ export default {
     try {
       return await axios.request({
         method: "POST",
-        url: "http://localhost:3001/api/savedbooks",
+        url: "/api/savedbooks",
         data: userId
       });      
     } catch (err) {
@@ -28,7 +28,7 @@ export default {
   deleteBook: async id => {
     try {
       console.log(id);
-      return await axios.delete("http://localhost:3001/api/books/" + id._id);      
+      return await axios.delete("/api/books/" + id._id);      
     } catch (err) {
       console.error('ERROR - API.js - deleteBook', err);
     }
@@ -36,7 +36,7 @@ export default {
   // Saves a book to the database
   saveBook: async bookData => {
     try {
-      return await axios.post("http://localhost:3001/api/books", bookData);      
+      return await axios.post("/api/books", bookData);      
     } catch (err) {
       console.error('ERROR - API.js - saveBook', err);
     }
