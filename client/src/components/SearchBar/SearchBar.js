@@ -49,7 +49,7 @@ export default function SearchBar() {
     <div className="search-container" style={{ marginTop: books.length===0 ? "200px" : "30px" }}>
     <Paper component="form" onSubmit={handleFormSubmit} className="search-bar">      
       <InputBase
-        className={classes.input}
+        className="search-input"
         placeholder="Search by book title"
         inputProps={{ 'aria-label': 'search google books' }}
         name="input"/>
