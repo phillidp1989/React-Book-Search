@@ -22,7 +22,7 @@ passport.use(
     {
       clientID: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
-      callbackURL: "http://localhost:3001/auth/github/redirect",
+      callbackURL: "/auth/github/redirect",
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
