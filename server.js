@@ -2,6 +2,7 @@ const express = require('express');
 const passport = require('passport');
 const logger = require('morgan');
 const cookieSession = require('cookie-session');
+const path = require('path');
 
 const authRoutes = require('./routes/authRoutes');
 const searchRoutes = require('./routes/searchRoute');
@@ -47,6 +48,14 @@ app.use(passport.session());
 app.use('/', authRoutes);
 app.use('/api', apiRoutes);
 app.use('/', searchRoutes);
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build/index.html', err => {
+    if (err) {
+      res.status(500).send(err);
+    }
+  }))
+})
 
 // Connect to database
 connectDB();
