@@ -11,12 +11,10 @@ function App() {
   return (
     <div>
       <Router>
-        <Route path="/">
-          <Redirect to="/login" />
-        </Route>   
-        <LoginPrivate path="/login" component={Login} />
-        <PrivateRoute path="/search" component={Search} />
-        <PrivateRoute path="/savedbooks" component={Saved} />
+        <Route path="/" to="/login" />
+        <LoginPrivate exact path="/login" component={Login} />
+        <PrivateRoute exact path="/search" component={Search} />
+        <PrivateRoute exact path="/savedbooks" component={Saved} />
       </Router>
     </div>
   );
