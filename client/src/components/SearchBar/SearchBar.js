@@ -1,4 +1,5 @@
 import React, {useContext} from 'react';
+import './style.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
@@ -45,15 +46,17 @@ export default function SearchBar() {
   }
 
   return (
+    <div className="search-container" style={{ marginTop: books.length===0 ? "200px" : "30px" }}>
     <Paper component="form" onSubmit={handleFormSubmit} className={classes.root}>      
       <InputBase
         className={classes.input}
-        placeholder="Search Google Books"
+        placeholder="Search by book title"
         inputProps={{ 'aria-label': 'search google books' }}
         name="input"/>
       <IconButton type="submit" className={classes.iconButton} aria-label="search">
         <SearchIcon />
       </IconButton>      
     </Paper>
+    </div>
   );
 }
