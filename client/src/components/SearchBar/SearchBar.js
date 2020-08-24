@@ -47,7 +47,7 @@ export default function SearchBar() {
 
   return (
     <div className="search-container" style={{ marginTop: books.length===0 ? "200px" : "30px" }}>
-    <Paper component="form" onSubmit={handleFormSubmit} className={classes.root}>      
+    <Paper component="form" onSubmit={handleFormSubmit} className="search-bar">      
       <InputBase
         className={classes.input}
         placeholder="Search by book title"
