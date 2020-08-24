@@ -13,9 +13,9 @@ function App() {
       <Router>
         <Switch />
         <Route path="/" to="/login" />
-        <LoginPrivate exact path="/login" component={Login} />
-        <PrivateRoute exact path="/search" component={Search} />
-        <PrivateRoute exact path="/savedbooks" component={Saved} />
+        <LoginPrivate path="/login" component={Login} />
+        <PrivateRoute path="/search" component={Search} />
+        <PrivateRoute path="/savedbooks" component={Saved} />
         <Switch />
       </Router>
     </div>
