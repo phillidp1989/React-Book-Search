@@ -33,7 +33,7 @@ function Sidenav() {
           <a href="/savedbooks">Saved</a>
         </li>
         <li>
-          <a href="http://localhost:3001/logout">
+          <a href="/logout">
             <i className="fas fa-sign-out-alt"></i>
           </a>
         </li>

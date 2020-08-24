@@ -2,7 +2,6 @@ const express = require('express');
 const passport = require('passport');
 const logger = require('morgan');
 const cookieSession = require('cookie-session');
-const cors = require('cors');
 
 const authRoutes = require('./routes/authRoutes');
 const searchRoutes = require('./routes/searchRoute');
@@ -43,11 +42,6 @@ if (process.env.NODE_ENV === "production") {
 // Initialize passport and sessions
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(cors({
-  origin: 'http://localhost:3000',
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true
-}))
 
 // Routes
 app.use('/', authRoutes);
