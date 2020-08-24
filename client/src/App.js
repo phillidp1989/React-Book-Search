@@ -1,23 +1,22 @@
-import React from 'react';
-import './App.css';
-import Login from './pages/Login';
-import {BrowserRouter as Router, Route} from 'react-router-dom'; 
-import Search from './pages/Search';
-import Saved from './pages/Saved';
+import React from "react";
+import "./App.css";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import Login from "./pages/Login";
+import Search from "./pages/Search";
+import Saved from "./pages/Saved";
+import PrivateRoute from "./hocs/PrivateRoute";
+import LoginPrivate from "./hocs/LoginPrivate";
 
 function App() {
   return (
     <div>
-      <Router>        
-        <Route exact path="/login">
-        <Login />
+      <Router>
+        <Route exact path="/">
+          <Redirect to="/login" />
         </Route>
-        <Route exact path="/search">
-        <Search /> 
-       </Route>
-       <Route exact path="/savedbooks">
-        <Saved /> 
-       </Route>
+        <LoginPrivate path="/login" component={Login} />
+        <PrivateRoute path="/search" component={Search} />
+        <PrivateRoute path="/savedbooks" component={Saved} />
       </Router>
     </div>
   );

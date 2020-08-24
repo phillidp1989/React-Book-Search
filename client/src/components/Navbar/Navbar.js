@@ -1,10 +1,18 @@
 import React from 'react';
+import './style.css';
 
 function Navbar() {
     return (
         <div className="navbar-fixed">
       <nav>
-        <div className="nav-wrapper indigo darken-3">
+        <div className="nav-wrapper grey darken-3">
+        <a href="/search" className="brand-logo">
+          <span className="g">G</span>
+          <span className="o">o</span>
+          <span className="oo">o</span>
+          <span className="g">g</span>
+          <span className="l">l</span>
+          <span className="e">e</span> Book Search</a>
           <a href="#" data-target="mobile-demo" className="sidenav-trigger"
             ><i className="material-icons">menu</i></a>
           <ul className="right hide-on-med-and-down">

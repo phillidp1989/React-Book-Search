@@ -1,5 +1,10 @@
 const router = require("express").Router();
 const passport = require("passport");
+const { authCheck } = require("../middleware/auth");
+
+router.get("http://localhost:3000", authCheck, (req, res) => {
+  res.status(200);
+})
 
 router.get(
   "/auth/github",
