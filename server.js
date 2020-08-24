@@ -49,13 +49,17 @@ app.use('/', authRoutes);
 app.use('/api', apiRoutes);
 app.use('/', searchRoutes);
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/build/index.html', err => {
-    if (err) {
-      res.status(500).send(`err`);
-    }
-  }))
-})
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
+
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'client/build/index.html', err => {
+//     if (err) {
+//       res.status(500).send(`err`);
+//     }
+//   }))
+// })
 
 // Connect to database
 connectDB();
