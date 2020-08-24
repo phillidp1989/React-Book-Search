@@ -11,7 +11,7 @@ function Search() {
     <div>
       <Navbar />
       <Sidenav />
-      <Jumbotron />
+      {/* <Jumbotron /> */}
       <SearchBar />
       <ResultsContainer />
     </div>
