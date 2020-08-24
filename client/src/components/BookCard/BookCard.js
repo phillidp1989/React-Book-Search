@@ -18,7 +18,7 @@ function BookCard({ title, description, authors, image, link }) {
   let last = authors.pop();
   let authorsString =
     authors.length === 1 ? authors.join(", ") + " and " + last : last;
-  authors.push(last);
+  
   
   const saveBook = async () => {
     const book = {
