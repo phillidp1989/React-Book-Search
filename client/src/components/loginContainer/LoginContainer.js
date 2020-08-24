@@ -9,8 +9,12 @@ function LoginContainer({ children }) {
         <div className="card">
           <div className="card-content">
             <h3>
-              <i className="fab fa-google"></i>
-              oogle Book Search <i className="fas fa-book"></i>
+          <span className="g">G</span>
+          <span className="o">o</span>
+          <span className="oo">o</span>
+          <span className="g">g</span>
+          <span className="l">l</span>
+          <span className="e">e</span> Book Search
             </h3>
             <div className="section">
               <p className="lead">The home of all your favourite books</p>
