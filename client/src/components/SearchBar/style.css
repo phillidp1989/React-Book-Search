@@ -3,6 +3,10 @@
   margin: auto;
 }
 
+.search-input {
+  width: 100%;
+}
+
 .search-container {  
   /* margin-top: 200px; */
   text-align: center;

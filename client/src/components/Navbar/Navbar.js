@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.css';
+import { Link } from '@material-ui/core';
 
 function Navbar() {
     return (
@@ -12,7 +13,7 @@ function Navbar() {
           <span className="oo">o</span>
           <span className="g">g</span>
           <span className="l">l</span>
-          <span className="e">e</span> Book Search</a>
+          <span className="e">e</span> Book Search</a>          
           <a href="#" data-target="mobile-demo" className="sidenav-trigger"
             ><i className="material-icons">menu</i></a>
           <ul className="right hide-on-med-and-down">
