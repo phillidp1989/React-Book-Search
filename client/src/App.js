@@ -13,20 +13,10 @@ function App() {
       <Router>
         <Route path="/">
           <Redirect to="/login" />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/search">
-          <Search />
-        </Route>
-        <Route path="/savedbooks">
-          <Saved />
-        </Route>
-        
-        {/* <LoginPrivate path="/login" component={Login} />
+        </Route>   
+        <LoginPrivate path="/login" component={Login} />
         <PrivateRoute path="/search" component={Search} />
-        <PrivateRoute path="/savedbooks" component={Saved} /> */}
+        <PrivateRoute path="/savedbooks" component={Saved} />
       </Router>
     </div>
   );
