@@ -15,9 +15,9 @@ function BookCard({ title, description, authors, image, link }) {
   const { user } = useContext(UserContext);
 
   // Manipulation of authors data
-  let last = [...authors].pop();
+  let last = authors.pop();
   let authorsString =
-    authors.length === 1 ? authors.join(", ") + " and " + last : last;
+    authors.length > 0 ? authors.join(", ") + " and " + last : last;
   
   
   const saveBook = async () => {
