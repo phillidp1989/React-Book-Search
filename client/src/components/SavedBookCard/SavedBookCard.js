@@ -61,7 +61,7 @@ function BookCard({ title, description, authors, image, link, id, changeState })
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">{"Deleted your list"}</DialogTitle>
+        <DialogTitle id="alert-dialog-title">{"Remove book from your list"}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
             Are you sure you would like to delete {title}?            
